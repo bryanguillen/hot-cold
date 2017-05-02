@@ -3,3 +3,36 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.container {
+	width: 65%;
+	margin: 0 auto;
+	height: 75vh;
+	padding-top: 15px;
+	text-align: center;
+}
+
+.guess-field, .guess {
+	display: block;
+	margin: 10px auto;
+	width: 25%;
+	height: 35px;
+	border: 1px solid #ccccb3;
+	background-color: white;
+	color: #ccccb3;
+	padding-left: 5px;
+}
+
+.guess {
+	padding-right: 0;
+}
+
+.guess-list {
+	list-style: none;
+}
+
+.guess-list-item {
+	display: inline-block;
+	margin-left: 5px;
+}
