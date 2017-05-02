@@ -12,7 +12,7 @@ export default class GamePlay extends React.Component {
 		this.state = {
 			guess: 0,
 			hotOrCold: '',
-			guessNum: 0,
+			guessNum: 1,
 			previousGuesses: []
 		}
 	}
@@ -26,19 +26,19 @@ export default class GamePlay extends React.Component {
 		let randomNumber = Math.floor(Math.random() * 100) + 1;
 		let range = randomNumber - this.state.guess; 
 		
+		if ( this.state.guess === randomNumber ) {
+			return this.setState({ 
+				hotOrCold: 'You WIN!!', 
+				guessNum: this.state.guessNum + 1,
+				previousGuesses: this.state.previousGuesses.concat([this.state.guess])
+			})
+		}
+
 		if ( range < 11 && range > -11 ) {
 			return this.setState({ 
 				hotOrCold: 'You Are Burning Hot!', 
 				guessNum: this.state.guessNum + 1, 
 				previousGuesses: this.state.previousGuesses.concat([this.state.guess]) 
-			})
-		}
-
-		if ( this.state.guess === randomNumber ) {
-			return this.setState({ 
-				hotOrCold: 'You Are Correct!', 
-				guessNum: this.state.guessNum + 1,
-				previousGuesses: this.state.previousGuesses.concat([this.state.guess])
 			})
 		}
 
@@ -52,11 +52,13 @@ export default class GamePlay extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<Result result={this.state.hotOrCold} />
-				<GuessField onClick={this.submitGuess} 
-				onChange={this.handleChange} />
-				<GuessNumber number={this.state.guessNum} />
-				<PreviousGuesses previousGuesses={this.state.previousGuesses} />
+				<div className="inner-container">
+					<Result result={this.state.hotOrCold} />
+					<GuessField onClick={this.submitGuess} 
+					onChange={this.handleChange} />
+					<GuessNumber number={this.state.guessNum} />
+					<PreviousGuesses previousGuesses={this.state.previousGuesses} />
+				</div>
 			</div>
 		)
 	}
