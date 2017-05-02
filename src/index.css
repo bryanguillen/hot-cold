@@ -19,7 +19,7 @@ body, #root {
 
 .container {
 	width: 35%;
-	height: 65%;
+	height: 70%;
 	background-color: #165657;
 	border: 1px solid white;
 	position: absolute;
@@ -31,7 +31,7 @@ body, #root {
 	we need to move that midpoint to be in the middle.*/
 	/*approximate values of the halfway point */
 	left: calc(50% - 17.5%); 
-	top: calc(50% - 32.5%);
+	top: calc(50% - 35%);
 }
 
 .inner-container {
@@ -83,6 +83,10 @@ body, #root {
 
 .cold {
 	background-color: #23B8B8;
+}
+
+.guess-number-container {
+	margin-top: 15px;
 }
 
 .guess-list {

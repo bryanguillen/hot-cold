@@ -30,8 +30,8 @@ export default class GamePlay extends React.Component {
 		if ( this.state.guess === randomNumber ) {
 			return this.setState({ 
 				hotOrCold: 'You WIN!!', 
-				guessNum: this.state.guessNum + 1,
-				previousGuesses: this.state.previousGuesses.concat([this.state.guess])
+				guessNum: 1,
+				previousGuesses: []
 			})
 		}
 
