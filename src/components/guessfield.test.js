@@ -8,7 +8,7 @@ describe('<GuessField />', () => {
 		shallow(<GuessField />)
 	})
 
-	it('Render blank input field', () => {
+	it('Render correct child elements', () => {
 		const wrapper = shallow(<GuessField />);
 		expect(wrapper.hasClass('guess-field-container')).toEqual(true);
 		expect(wrapper.find('.guess'));
