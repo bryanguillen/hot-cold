@@ -37,7 +37,7 @@ export default class GamePlay extends React.Component {
 
 		if ( range < 11 && range > -11 ) {
 			return this.setState({ 
-				hotOrCold: 'Burning Hot!',
+				hotOrCold: 'Close! Burning Hot!',
 				resultColor: 'hot', 
 				guessNum: this.state.guessNum + 1, 
 				previousGuesses: this.state.previousGuesses.concat([this.state.guess]) 
@@ -45,7 +45,7 @@ export default class GamePlay extends React.Component {
 		}
 
 		return this.setState({ 
-			hotOrCold: 'Freezing Cold!',
+			hotOrCold: 'Wrong! Freezing Cold!',
 			resultColor: 'cold', 
 			guessNum: this.state.guessNum + 1,
 			previousGuesses: this.state.previousGuesses.concat([this.state.guess]) 
@@ -54,18 +54,18 @@ export default class GamePlay extends React.Component {
 
 	render() {
 		return (
-			<div className="container">
-				<div className="inner-container">
-					<Result result={this.state.hotOrCold}
-					resultClass={this.state.resultColor}
-					/>
-					<GuessField onClick={this.submitGuess} 
-					onChange={this.handleChange} />
-					<GuessNumber number={this.state.guessNum} />
-					<PreviousGuesses previousGuesses={this.state.previousGuesses} />
+				<div className="container">
+					<div className="inner-container">
+						<Result result={this.state.hotOrCold}
+						resultClass={this.state.resultColor}
+						/>
+						<GuessField onClick={this.submitGuess} 
+						onChange={this.handleChange} />
+						<GuessNumber number={this.state.guessNum} />
+						<PreviousGuesses previousGuesses={this.state.previousGuesses} />
+					</div>
 				</div>
-			</div>
-		)
+		);
 	}
 
 }
