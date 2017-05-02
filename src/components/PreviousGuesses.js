@@ -10,6 +10,7 @@ export default function PreviousGuesses (props) {
 	})
 	return (
 		<div className="previous-guesses-container">
+			<p className="prev-guess-header">PreviousGuesses</p>
 			<ul className="guess-list">{prevGuessList}</ul>
 		</div>
 	)

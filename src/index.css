@@ -7,36 +7,54 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: #0e454c;
+}
+
+body, #root {
   height: 100vh;
+}
+
+#root {
+	position: relative;
 }
 
 .container {
 	width: 35%;
-	margin: 0 auto;
-	height: 65vh;
-	padding-top: 15px;
-	text-align: center;
+	height: 65%;
 	background-color: #165657;
 	border: 1px solid white;
-	display: table;
+	position: absolute;
+	text-align: center;
+	padding-top: 15px;
+	/* we want the halfway point of the div(35% / 2) to 
+	be directly at half of the page. So half is 50% and 
+	and we subtract 17.5 to findout how much percentage wise 
+	we need to move that midpoint to be in the middle.*/
+	/*approximate values of the halfway point */
+	left: calc(50% - 17.5%); 
+	top: calc(50% - 32.5%);
 }
 
 .inner-container {
-	display: table-cell;
-	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: calc(50% - 25%);
 }
 
-.guess-number-container, .result-container, .guess-field, .guess {
+.guess-number-container, .result-container, .guess-field, .guess, .prev-guess-header {
 	color: white;
 	font-size: 20px;
 }
 
-.guess-field, .guess {
-	display: block;
-	margin: 10px auto;
-	width: 45%;
+.guess-field, .guess, .result-container {
 	height: 55px;
+	width: 45%;
 	border-radius: 5%;
+}
+
+.guess-field, .guess {
+	margin: 5px auto;
+	display: block;
 }
 
 .guess {
@@ -51,6 +69,20 @@ body {
 	color: white;
 	background-color: #163b61;
 	padding: 15px;
+}
+
+.result-container {
+	margin: 0 auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.hot {
+	background-color: #980F0F;
+}
+
+.cold {
+	background-color: #23B8B8;
 }
 
 .guess-list {
