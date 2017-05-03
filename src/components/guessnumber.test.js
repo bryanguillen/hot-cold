@@ -12,12 +12,4 @@ describe('<GuessNumber />', () => {
 		const wrapper = shallow(<GuessNumber />);
 		expect(wrapper.hasClass('guess-number-container')).toEqual(true);
 	})
-
-	it('Should fire onclick callback', () => {
-		const callback = jest.fn();
-		const wrapper =  mount(<GuessNumber onClick={callback} />);
-		const text = 2;
-		wrapper.find('.guess-number-container').node.text = text;
-		expect(callback); 
-	})
 })
