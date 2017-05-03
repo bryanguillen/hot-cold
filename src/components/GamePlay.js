@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import Result from './Result';
 import GuessField from './GuessField';
 import GuessNumber from './GuessNumber';
@@ -56,6 +57,7 @@ export default class GamePlay extends React.Component {
 		return (
 				<div className="container">
 					<div className="inner-container">
+						<Header />
 						<Result result={this.state.hotOrCold}
 						resultClass={this.state.resultColor}
 						/>
