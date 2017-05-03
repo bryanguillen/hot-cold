@@ -12,4 +12,9 @@ describe('<GuessNumber />', () => {
 		const wrapper = shallow(<GuessNumber />);
 		expect(wrapper.hasClass('guess-number-container')).toEqual(true);
 	})
+
+	it('Should render component with text in it', () => {
+		const wrapper = shallow(<GuessNumber number='1' />)
+		expect(wrapper.text()).toEqual('Guess #1');
+	})
 })
