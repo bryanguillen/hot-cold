@@ -8,9 +8,9 @@ the right message and reset game.
 
 The app is super simple; it has just one button, one input field, a section to show feedback, guess #, and also the previous guesses.
 
-![alt_text](https://github.com/bryg217/hot-cold/blob/master/screenshots/Screenshot%20(114).png)
+![alt_text](https://github.com/bryg217/hot-cold/blob/master/screenshots/Screenshot%20(117).png)
 
-![alt_text](https://github.com/bryg217/hot-cold/blob/master/screenshots/Screenshot%20(113).png)
+![alt_text](https://github.com/bryg217/hot-cold/blob/master/screenshots/Screenshot%20(118).png)
 
 ## Author
 
