@@ -8,6 +8,11 @@ describe('<Header />', () => {
 		shallow(<Header />);
 	})
 
+	it('Render with right class', () => {
+		const wrapper = shallow(<Header />);
+		expect(wrapper.hasClass('header')).toEqual(true);
+	})
+
 	it('Render with proper text', () => {
 		const wrapper = shallow(<Header />);
 		expect(wrapper.text()).toEqual("Hot Cold Guessing Game");
