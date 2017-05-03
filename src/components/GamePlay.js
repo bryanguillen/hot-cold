@@ -8,9 +8,11 @@ import PreviousGuesses from './PreviousGuesses'
 export default class GamePlay extends React.Component {
 	constructor(props){
 		super(props);
+		let randomNumber = Math.floor(Math.random() * 100) + 1;
 		this.handleChange = this.handleChange.bind(this);
 		this.submitGuess = this.submitGuess.bind(this);
 		this.state = {
+			number: randomNumber,
 			guess: 0,
 			hotOrCold: '',
 			resultColor: '', 
@@ -20,14 +22,14 @@ export default class GamePlay extends React.Component {
 	}
 
 	handleChange(event) {
-		this.setState({ guess: event.target.value });
+		this.setState({ guess: parseInt(event.target.value, 10) });
 	}
 
 	submitGuess(event) {
 		event.preventDefault();
-		let randomNumber = Math.floor(Math.random() * 100) + 1;
+		let randomNumber = this.state.number;
 		let range = randomNumber - this.state.guess; 
-		
+
 		if ( this.state.guess === randomNumber ) {
 			return this.setState({ 
 				hotOrCold: 'You WIN!!', 
